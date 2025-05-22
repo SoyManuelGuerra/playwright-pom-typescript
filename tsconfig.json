@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+      "target": "ES2021",                       /* Especifica la versión de ECMAScript de destino. */
+      "module": "commonjs",                     /* Especifica la generación de código de módulo. */
+      "rootDir": "./src",                       /* Especifica el directorio raíz de los archivos de entrada. */
+      "outDir": "./dist",                       /* Directorio de salida para los archivos JavaScript compilados. */
+      "strict": true,                           /* Habilita todas las opciones de verificación de tipo estrictas. */
+      "esModuleInterop": true,                  /* Permite la interoperabilidad con módulos CommonJS. */
+      "skipLibCheck": true,                     /* Omite la verificación de tipos de los archivos de declaración. */
+      "forceConsistentCasingInFileNames": true, /* Asegura la consistencia en el uso de mayúsculas y minúsculas en los nombres de archivo. */
+      "resolveJsonModule": true,                /* Permite importar módulos JSON. */
+      "moduleResolution": "node",               /* Especifica cómo se resuelven los módulos. */
+      "sourceMap": true,                        /* Genera archivos .map correspondientes para depuración. */
+      "noImplicitAny": true,                    /* Lanza un error en expresiones y declaraciones con un tipo 'any' implícito. */
+      "baseUrl": ".",                           /* Directorio base para resolver nombres de módulos no relativos. */
+      "paths": {                                /* Mapeo de rutas para importaciones más limpias. */
+        "@pages/*": ["src/pages/*"],
+        "@tests/*": ["src/tests/*"],
+        "@utils/*": ["src/utils/*"],
+        "@fixtures/*": ["src/fixtures/*"],
+        "@config/*": ["src/config/*"]
+      },
+      "types": ["node", "@playwright/test"]    /* Incluye definiciones de tipo para Node.js y Playwright Test. */
+    },
+    "include": [
+      "src/**/*.ts",                            /* Incluye todos los archivos .ts en la carpeta src. */
+      "playwright.config.ts"                    /* Incluye el archivo de configuración de Playwright. */
+    ],
+    "exclude": [
+      "node_modules"                            /* Excluye la carpeta node_modules. */
+    ]
+  }
+  

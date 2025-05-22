@@ -1,0 +1,37 @@
+{
+    "name": "playwright-pom-typescript-portfolio",
+    "version": "1.0.0",
+    "description": "Modelo de proyecto de automatización con Playwright, TypeScript y POM",
+    "main": "index.js",
+    "scripts": {
+        "test": "npx playwright test",
+        "test:headed": "npx playwright test --headed",
+        "test:ui": "npx playwright test --ui",
+        "test:debug": "npx playwright test --debug",
+        "codegen": "npx playwright codegen https://www.saucedemo.com",
+        "lint": "eslint . --ext .ts",
+        "lint:fix": "eslint . --ext .ts --fix",
+        "format": "prettier --write \"src/**/*.ts\""
+    },
+    "keywords": [
+        "playwright",
+        "typescript",
+        "automation",
+        "pom",
+        "testing"
+    ],
+    "author": "Manuel Guerra",
+    "license": "ISC",
+    "devDependencies": {
+        "@playwright/test": "^1.44.0",
+        "@types/node": "^20.12.12",
+        "@typescript-eslint/eslint-plugin": "^7.9.0",
+        "@typescript-eslint/parser": "^7.9.0",
+        "dotenv": "^16.5.0",
+        "eslint": "^8.57.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-playwright": "^1.6.2",
+        "prettier": "^3.2.5",
+        "typescript": "^5.4.5"
+    }
+}
