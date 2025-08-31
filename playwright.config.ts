@@ -41,7 +41,7 @@ export default defineConfig({
     baseURL: process.env.BASE_URL || 'https://www.saucedemo.com', // Ejemplo, cámbialo por tu URL
 
     /* Recolecta trazas de ejecución. Ver https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry', // Graba trazas en el primer reintento
+    trace: 'on', // Graba trazas en todas las ejecuciones
 
     /* Captura screenshots en caso de fallo. */
     screenshot: 'only-on-failure',

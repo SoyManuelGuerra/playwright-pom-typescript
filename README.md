@@ -65,6 +65,68 @@ Este proyecto es un ejemplo de cómo estructurar pruebas de automatización web 
     npm run codegen
     ```
 
+## Visualización de Traces (Trace Viewer)
+
+Playwright genera archivos de trace que permiten revisar paso a paso la ejecución de las pruebas, incluyendo acciones del usuario, navegación, screenshots y más. Esto es especialmente útil para debuggear pruebas fallidas.
+
+### Configuración de Traces
+
+En el archivo `playwright.config.ts`, la configuración actual es:
+```typescript
+trace: 'on', // Genera trazas en todas las ejecuciones
+```
+
+### Opciones de Configuración de Trace
+
+* `'off'` - No genera trazas
+* `'on'` - Genera trazas en todas las ejecuciones (configuración actual)
+* `'on-first-retry'` - Solo genera trazas cuando una prueba falla y se reintenta
+* `'retain-on-failure'` - Genera trazas pero solo las mantiene si fallan
+* `'on-all-retries'` - Genera trazas en todos los reintentos
+
+### Cómo Ver los Traces
+
+#### 1. **Usando el comando show-trace (Recomendado)**
+```bash
+# Ver un trace específico
+npx playwright show-trace test-results/nombre-del-test/trace.zip
+
+# Ver el último trace generado
+npx playwright show-trace
+```
+
+#### 2. **Desde el Reporte HTML**
+```bash
+# Abrir el reporte HTML completo
+npx playwright show-report
+```
+El reporte HTML incluye enlaces directos a los traces de cada prueba ejecutada.
+
+#### 3. **Ubicación de los Archivos de Trace**
+Los archivos de trace se guardan en `test-results/` con nombres descriptivos que incluyen:
+- Nombre de la prueba
+- Navegador utilizado (chromium, firefox, webkit)
+- Timestamp de ejecución
+
+### Ejecutar Pruebas con Trace Específico
+
+```bash
+# Ejecutar una prueba específica con trace habilitado
+npx playwright test --trace on src/tests/login.spec.ts
+
+# Ejecutar todas las pruebas con trace
+npx playwright test --trace on
+```
+
+### Información Incluida en los Traces
+
+* **Acciones del usuario:** Clicks, tecleo, navegación
+* **Screenshots:** Capturas automáticas en cada paso
+* **Timeline:** Cronología detallada de eventos
+* **Network:** Llamadas HTTP y respuestas
+* **Console:** Logs del navegador
+* **Source:** Código fuente de la página en cada momento
+
 ## Estructura del Proyecto
 
 El proyecto está organizado de la siguiente manera:
